@@ -1,0 +1,19 @@
+.limited-card {
+  max-height: 400px; // Limit the overall height of the card
+  overflow: hidden;
+}
+
+.chart-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; // Full height inside the card-body
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  min-height: 200px;
+}

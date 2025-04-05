@@ -1,0 +1,44 @@
+.container-fluid {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 32px;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.login-btn {
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.register-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}

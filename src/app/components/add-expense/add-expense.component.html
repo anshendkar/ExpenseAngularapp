@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="card mt-4">
+    <div class="card-body">
+      <h2 class="text-center mb-3">Add Expense</h2>
+      <form [formGroup]="expenseForm" (ngSubmit)="addExpense()">
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            id="description"
+            type="text"
+            formControlName="description"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input
+            id="amount"
+            type="number"
+            formControlName="amount"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" formControlName="category" class="form-control">
+            <option value="" disabled>Select category</option>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Shopping">Medical</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="file">Receipt</label>
+          <input
+            id="file"
+            type="file"
+            (change)="onFileChange($event)"
+            class="form-control"
+          />
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+          <button type="submit" class="btn btn-primary me-2">Save</button>
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

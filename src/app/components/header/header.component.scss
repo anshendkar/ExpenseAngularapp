@@ -1,0 +1,39 @@
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8); /* Slightly muted color */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff; /* Bright white on hover */
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle background change */
+  border-radius: 5px; /* Rounded effect for hover */
+  text-decoration: underline; /* Optional underline */
+}
+
+  
+    .navbar-toggler {
+      border: none; // Remove border around the toggle button
+      &:focus {
+        box-shadow: none; // Remove focus outline
+      }
+    }
+  
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .brand-hover {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    
+      &:hover {
+        color: orange;
+        cursor: pointer;
+      }
+    }
+
+  

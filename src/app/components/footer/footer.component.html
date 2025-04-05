@@ -1,0 +1,33 @@
+<footer class="bg-dark text-light py-4"  *ngIf="!isAuthenticated">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h5>About ExpenseTracker</h5>
+          <p>
+            ExpenseTracker helps you manage your finances efficiently. Track your expenses, categorize them, and stay on top of your budget!
+          </p>
+        </div>
+        <div class="col-md-3 mb-3 mb-md-0">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="/about" class="text-light text-decoration-none">About Us</a></li>
+            <li><a href="/contact" class="text-light text-decoration-none">Contact</a></li>
+            <li><a href="/help" class="text-light text-decoration-none">Help Center</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 text-center text-md-end">
+          <h5>Follow Us</h5>
+          <a href="https://facebook.com" class="text-light me-2"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com" class="text-light"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col text-center">
+          <p class="mb-0">
+            &copy; {{ currentYear }} ExpenseTracker. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>

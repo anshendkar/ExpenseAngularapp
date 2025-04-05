@@ -1,0 +1,33 @@
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.text-center {
+  margin-bottom: 1.5rem;
+}
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.d-flex {
+  gap: 1rem; // Ensures spacing between buttons
+}
+
+
+.form-group {
+  margin-bottom: 1rem;
+
+  label {
+    font-weight: bold;
+  }
+
+  .form-control {
+    margin-top: 0.5rem;
+  }
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+}

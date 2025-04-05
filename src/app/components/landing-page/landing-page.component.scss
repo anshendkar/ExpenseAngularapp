@@ -1,0 +1,96 @@
+/* Full-page container styling */
+.container-fluid {
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Stylish gradient */
+    color: white; /* Text color for good contrast */
+  }
+  
+  /* Animated text */
+  .animated-text {
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Get Started Button Hover Effect */
+  .get-started-btn {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #2575fc; /* Slightly darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+
+  .features-section {
+    max-width: 800px;
+    margin: 0 auto;
+  
+    h2 {
+      font-weight: bold;
+      font-size: 2rem;
+      color: #333;
+    }
+  
+    .carousel {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+  
+    .feature-img {
+      max-height: 400px;
+      object-fit: fill;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+  
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+    }
+  
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+    }
+  }
+
+  .features-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 3rem;
+  }
+  
+  .typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(20, end), blink 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  

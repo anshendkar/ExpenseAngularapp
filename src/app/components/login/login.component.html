@@ -1,0 +1,37 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+  <mat-card class="p-5 login-card">
+    <mat-card-title class="text-center login-title">Login</mat-card-title>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Email Field -->
+      <mat-form-field class="w-100 mt-4" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" [(ngModel)]="user.email" type="email" placeholder="Enter email">
+        <mat-error *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+          Valid email is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Password Field -->
+      <mat-form-field class="w-100 mt-4" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" [(ngModel)]="user.password" type="password" placeholder="Enter password">
+        <mat-error *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+          Password is required (min. 6 characters).
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Login Button -->
+      <button mat-raised-button color="primary" class="w-100 mt-4 login-btn" [disabled]="loginForm.invalid">
+        Login
+      </button>
+
+    </form>
+
+    <!-- Register Link -->
+    <div class="text-center mt-4">
+      <a class="register-link" href="javascript:void(0)" (click)="register()">Don't have an account? Register</a>
+    </div>
+  </mat-card>
+</div>

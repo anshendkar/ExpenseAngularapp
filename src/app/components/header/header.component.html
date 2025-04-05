@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand brand-hover" (click)="navigateTolandingPage()">ExpenseTracker</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <!-- Home link -->
+        <li class="nav-item"  *ngIf="isAuthenticated">
+          <a class="nav-link" (click)="navigateTodashboardPage()">Dashboard</a>
+        </li>
+        <!-- Add Expense link (if authenticated) -->
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a class="nav-link" (click)="navigateToAddExpense()">Add Expense</a>
+        </li>
+        <!-- Login link (if not authenticated) -->
+        <li class="nav-item" *ngIf="!isAuthenticated">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <!-- Logout link (if authenticated) -->
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a class="nav-link text-danger" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

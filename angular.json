@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -90,12 +91,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/chart.js/src/chart.js"]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "85b19d60-ddeb-4c1a-bff3-caf6668f465e"
   }
 }

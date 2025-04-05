@@ -1,0 +1,59 @@
+<div class="container mt-5">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h3 class="text-center">Update Expense</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="updateExpenseForm" (ngSubmit)="saveExpense()">
+          <!-- Description -->
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input
+              id="description"
+              type="text"
+              class="form-control"
+              formControlName="description"
+            />
+          </div>
+  
+          <!-- Amount -->
+          <div class="mb-3">
+            <label for="amount" class="form-label">Amount</label>
+            <input
+              id="amount"
+              type="number"
+              class="form-control"
+              formControlName="amount"
+            />
+          </div>
+  
+          <!-- Category -->
+          <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select
+              id="category"
+              formControlName="category"
+              class="form-select"
+            >
+              <option value="Food">Food</option>
+              <option value="Health">Health</option>
+              <option value="Travel">Travel</option>
+            </select>
+          </div>
+  
+          <!-- Receipt Upload -->
+          <div class="mb-3">
+            <label for="file" class="form-label">Upload Receipt (Optional)</label>
+            <input id="file" type="file" class="form-control" formControlName="file" (change)="onFileChange($event)" />
+
+          </div>
+  
+          <!-- Buttons -->
+          <div class="d-flex justify-content-end mt-4">
+            <button type="submit" class="btn btn-success me-2">Save</button>
+            <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

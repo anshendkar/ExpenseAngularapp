@@ -1,0 +1,55 @@
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100 bg-lightblue">
+  <mat-card class="p-5 register-card">
+    <mat-card-title class="text-center register-title">Register</mat-card-title>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      
+      <!-- First Name Field -->
+      <mat-form-field class="w-100 mt-4" appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstname" type="text" placeholder="Enter first name">
+        <mat-error *ngIf="registerForm.controls['firstname'].invalid && registerForm.controls['firstname'].touched">
+          First name is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Last Name Field -->
+      <mat-form-field class="w-100 mt-4" appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastname" type="text" placeholder="Enter last name">
+        <mat-error *ngIf="registerForm.controls['lastname'].invalid && registerForm.controls['lastname'].touched">
+          Last name is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Email Field -->
+      <mat-form-field class="w-100 mt-4" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="Enter email">
+        <mat-error *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">
+          Valid email is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Password Field -->
+      <mat-form-field class="w-100 mt-4" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" placeholder="Enter password">
+        <mat-error *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+          Password must be at least 6 characters.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Register Button -->
+      <button mat-raised-button color="primary" class="w-100 mt-4 register-btn" [disabled]="registerForm.invalid">
+        Register
+      </button>
+
+    </form>
+
+    <!-- Login Link -->
+    <div class="text-center mt-4">
+      <a class="login-link" href="javascript:void(0)" (click)="login()">Already have an account? Login</a>
+    </div>
+  </mat-card>
+</div>

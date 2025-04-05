@@ -1,0 +1,15 @@
+<div class="card shadow border-success hover-card limited-card">
+  <div class="card-header text-center">
+    <h2>Expense Summary by Category</h2>
+  </div>
+  <div class="card-body text-center chart-wrapper">
+    <canvas *ngIf="chartData.labels.length > 0"
+            baseChart 
+            [data]="chartData" 
+            [type]="donutChartType" 
+            [options]="chartOptions"
+            class="chart-container">
+    </canvas>
+    <p *ngIf="chartData.labels?.length === 0">No data to display.</p>
+  </div>
+</div>

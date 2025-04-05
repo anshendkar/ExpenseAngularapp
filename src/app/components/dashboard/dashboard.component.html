@@ -1,0 +1,121 @@
+<div class="container-fluid mt-5 p-10">
+  <div class="row mb-4 align-items-center">
+    <div class="col-12 text-center">
+      <h1 class="typing-text">Welcome {{ userdata.firstname | capitalize }} {{ userdata.lastname | capitalize }}</h1>
+    </div>
+  </div>  
+
+  <div class="row">
+    <!-- Date Filter and Summary Cards (col-md-2) -->
+    <div class="col-md-2 fix-height">
+      <div class="card shadow border-info p-3 h-100">
+        <div class="card-body">
+          <label for="dateFilter" class="form-label text-info">Filter by Date</label>
+          <input id="dateFilter" type="date" class="form-control" (change)="filterByDate($event)" />
+        </div>
+      </div>
+      <br>
+
+      <div class="card shadow border-success hover-card h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title text-success">Total Amount Spent</h5>
+          <h3 class="card-text">{{ summary.totalAmountSpent | currency }}</h3>
+        </div>
+      </div>
+      <br>
+
+      <div class="card shadow border-primary hover-card h-100">
+        <div class="card-body text-center">
+          <h5 class="card-title text-primary">Total Expenses</h5>
+          <h3 class="card-text">{{ summary.totalExpenses }}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Donut Chart (col-md-4) -->
+    <div class="col-md-4">
+      <div class="card shadow p-3 h-100 box-body">
+        <div class="card-body body-size-donut">
+          <app-expense-donut-chart  *ngIf="filteredExpenses.length > 0"
+            [filteredExpenses]="filteredExpenses">></app-expense-donut-chart>
+        </div>
+      </div>
+    </div>
+
+    <!-- Line Chart (col-md-6) -->
+    <div class="col-md-6">
+      <div class="card shadow p-3 h-100 box-body">
+        <div class="card-body">
+          <canvas baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="'line'" class="chart-canvas">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Table Section -->
+  <div class="row space">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Expense ID</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Filename</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let expense of paginatedExpenses">
+              <td>{{ expense.expenseId }}</td>
+              <td>{{ expense.category }}</td>
+              <td>{{ expense.amount }}</td>
+              <td>{{ expense.date | date }}</td>
+              <td>{{ expense.description }}</td>
+              <td>{{ expense.filename || 'NA' }}</td>
+              <td class="text-nowrap">
+                <button mat-raised-button color="primary" [disabled]="!expense.filename"
+                  class="btn-sm uniform-btn me-2" (click)="viewExpense(expense.expenseId, expense.userdata.userid)">
+                  <mat-icon class="me-1">visibility</mat-icon> View
+                </button>
+              
+                <button mat-raised-button color="accent" [disabled]="!expense.filename"
+                  class="btn-sm uniform-btn me-2" (click)="downloadFile(expense.expenseId, expense.userdata.userid)">
+                  <mat-icon class="me-1">cloud_download</mat-icon> Download
+                </button>
+              
+                <button mat-raised-button color="success"
+                  class="btn-sm uniform-btn me-2" (click)="editExpense(expense.expenseId, expense.userdata.userid)">
+                  <mat-icon class="me-1">edit</mat-icon> Edit
+                </button>
+              
+                <button mat-raised-button color="warn"
+                  class="btn-sm uniform-btn" (click)="deleteExpense(expense)">
+                  <mat-icon class="me-1">delete</mat-icon> Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" [class.disabled]="currentPage === 1">
+            <button class="page-link" (click)="previousPage()">Previous</button>
+          </li>
+          <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+            <button class="page-link" (click)="goToPage(page)">{{ page }}</button>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <button class="page-link" (click)="nextPage()">Next</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

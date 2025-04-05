@@ -1,0 +1,100 @@
+.container {
+  max-width: 1200px;
+}
+
+.card.shadow {
+  border-radius: 0.5rem;
+}
+
+.fix-height {
+  height: fit-content;
+}
+
+.body-size-donut {
+  height: fit-content;
+}
+
+.box-body {
+  width: 100%;
+  padding-bottom: 0 !important;
+}
+
+/* Hover effect for cards */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Table styling */
+.table {
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hover-card {
+    margin-bottom: 20px;
+  }
+
+  .table {
+    font-size: 14px;
+  }
+
+  .pagination {
+    font-size: 12px;
+  }
+}
+
+.chart-canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+.space{
+  margin-top: 15px !important;
+}
+.uniform-btn {
+  min-width: 120px; // Adjust as needed
+  height: 36px;     // Ensures consistent height
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 14px;
+}
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(20, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
