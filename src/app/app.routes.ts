@@ -8,7 +8,7 @@ import { UpdateExpenseComponent } from './components/update-expense/update-expen
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'landing-page', pathMatch: 'full' },
+  { path: 'full', redirectTo: 'landing-page', pathMatch: 'full' },
   { path: 'landing-page', component: LandingPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -26,6 +26,5 @@ export const routes: Routes = [
     path: 'update/:expenseId/:userid',
     component: UpdateExpenseComponent,
     canActivate: [authGuard]
-  },
-  { path: '**', redirectTo: 'landing-page' } 
+  }
 ];
